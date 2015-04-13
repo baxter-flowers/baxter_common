@@ -132,6 +132,14 @@
               </material>
           </visual>
       </link>
+      <link name="left_finger">
+          <collision>
+              <origin xyz="0 0 0" rpy="0 -0 0" />
+              <geometry>
+                  <cylinder radius="0.01" length="0.11" />
+              </geometry>
+          </collision>
+      </link>
       <link name="left_gripper_base">
           <inertial>
               <mass value="0.0475" />
@@ -879,6 +887,12 @@
           <axis xyz="0 0 0" />
           <parent link="left_gripper_base" />
           <child link="left_gripper" />
+      </joint>
+      <joint name="left_finger_joint" type="fixed">
+          <origin xyz="0 0 0.01" rpy="0 -0 0" />
+          <axis xyz="0 0 0" />
+          <parent link="left_gripper" />
+          <child link="left_finger" />
       </joint>
       <joint name="left_gripper_base" type="fixed">
           <origin xyz="0 0 0" rpy="0 -0 0" />
